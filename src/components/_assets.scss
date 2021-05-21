@@ -1,0 +1,22 @@
+// Fonts
+@mixin rig-bold {
+  font-family: rig-shaded-bold-face, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+// Colors
+:root,
+[data-theme="default"] {
+  --bg-color: #f2f2f2;
+  --menu-color: #171717;
+  --nav-text-color: #f2f2f2;
+  --navBG-color: #2d2d2d;
+}
+// Dark Mode
+[data-theme="dark"] {
+  --bg-color: #171717;
+  --menu-color: #f2f2f2;
+  --nav-text-color: #f2f2f2;
+  --navBG-color: #2d2d2d;
+}

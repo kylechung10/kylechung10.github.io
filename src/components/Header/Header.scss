@@ -1,0 +1,134 @@
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+/*Lock header to top*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 101;
+}
+
+#logo {
+  margin-top: 40px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px 0 40px;
+  transition: all 0.1s linear;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+/*Menu Button*/
+.menu-btn {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  z-index: 4;
+  transition: all 0.1s linear;
+  .ham-menu {
+    @include easeOut();
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}
+.text-transition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+span {
+  margin: 0;
+  padding: 0;
+  //   color: var(--menu-color);
+  position: absolute;
+  right: 80px;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.btn-line {
+  width: 30px;
+  height: 2px;
+  margin: 0 0 6px 0;
+  background-color: tomato;
+  //   background: var(--menu-color);
+  @include easeOut();
+
+  &:nth-child(3) {
+    margin-bottom: 0;
+  }
+}
+
+/*Navigation List Menu*/
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  z-index: 3;
+
+  .nav-menu {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    //   background-color: var(--navBG-color);
+    @include easeOut();
+    transform: translate3d(100%, 0, 0);
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .nav-item {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        //   color: var(--navText-color);
+        font-size: 4rem;
+        line-height: 6rem;
+        opacity: 1;
+        transition: all 0.1s linear;
+        opacity: 0.5;
+        &:hover {
+          opacity: 1;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          margin-top: -20px;
+          margin-bottom: 20px;
+          width: 0;
+          height: 3px;
+          // background: var(--navText-color);
+          transition: all 300ms ease;
+          opacity: 0.5;
+        }
+        &:hover::after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/*Mobile Menu*/
+@media screen and (max-width: 980px) {
+  .menu {
+    width: 100%;
+  }
+}
