@@ -1,8 +1,14 @@
+@import "./components/assets";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html {
+html,
+body {
   font-family: proxima-nova, sans-serif;
+  height: 100%;
+  background-color: var(--bg-color);
+  @include easeOut();
 }

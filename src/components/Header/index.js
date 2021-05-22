@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isThemeDark, setIsThemeDark] = useState(false);
+
+  isThemeDark
+    ? (document.body.dataset.theme = "dark")
+    : (document.body.dataset.theme = "default");
+
   return (
     <header>
-      <div id="logo">
+      <div id="menu-fixed">
         <Link to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1000 1000"
-            fill="#171717"
+            fill={isThemeDark ? "#f2f2f2" : "#171717"}
             height="50px"
             width="50px"
           >
@@ -42,15 +49,69 @@ function Header() {
             </g>
           </svg>
         </Link>
-      </div>
 
-      <div className="menu-btn">
-        <span className="menu-text">menu</span>
-        <div className="menu-bars">
-          <div className="btn-line"></div>
-          <div className="btn-line"></div>
-          <div className="btn-line"></div>
+        <div
+          className={isMenuOpen ? "menu-btn show" : "menu-btn"}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className="menu-text">{isMenuOpen ? "close" : "menu"}</span>
+          <div className="menu-bars">
+            <div className="btn-line"></div>
+            <div className="btn-line"></div>
+            <div className="btn-line"></div>
+          </div>
         </div>
+        {isMenuOpen ? (
+          <div className="overlay" onClick={() => setIsMenuOpen(!isMenuOpen)} />
+        ) : undefined}
+        <nav id="navigation" className={isMenuOpen ? "show" : undefined}>
+          <ul>
+            <li>
+              <Link to="/" className="nav-item">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/#project" className="nav-item">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link to="/#about" className="nav-item">
+                About Me
+              </Link>
+            </li>
+            <li>
+              <Link to="/#contact" className="nav-item">
+                Contact
+              </Link>
+            </li>
+            <li id="theme-switch">
+              <label
+                id="light"
+                className={!isThemeDark ? "active" : undefined}
+                htmlFor="checkbox"
+              >
+                light
+              </label>
+              <label className="toggle" htmlFor="checkbox">
+                <input
+                  type="checkbox"
+                  id="checkbox"
+                  onChange={() => setIsThemeDark(!isThemeDark)}
+                />
+                <span className="slider round" />
+              </label>
+              <label
+                id="dark"
+                className={isThemeDark ? "active" : undefined}
+                htmlFor="checkbox"
+              >
+                dark
+              </label>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

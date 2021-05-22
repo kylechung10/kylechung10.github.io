@@ -9,14 +9,19 @@
 :root,
 [data-theme="default"] {
   --bg-color: #f2f2f2;
-  --menu-color: #171717;
+  --menu-btn: #171717;
   --nav-text-color: #f2f2f2;
   --navBG-color: #2d2d2d;
 }
 // Dark Mode
 [data-theme="dark"] {
   --bg-color: #171717;
-  --menu-color: #f2f2f2;
+  --menu-btn: #f2f2f2;
   --nav-text-color: #f2f2f2;
   --navBG-color: #2d2d2d;
+}
+
+// Other
+@mixin easeOut {
+  transition: all 0.5s ease-out;
 }
