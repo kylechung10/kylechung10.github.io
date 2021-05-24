@@ -4,22 +4,25 @@ import "./HeroSection.scss";
 
 function HeroSection() {
   return (
-    <section id="hero-section">
+    <section id="home" className="view-height">
       <div className="bg-text">
         KYLE
         <br />
         CHUNG
       </div>
-      <div className="page-container">
+      <div className="content">
         <div className="content-wrapper">
-          <div className="content-text">
-            <h1>Kyle Chung</h1>
-            <p>
-              Web Developer <br />
-              Front-End Designer
-            </p>
-            <button>view my work</button>
-          </div>
+          <h1>Kyle Chung</h1>
+          <h3>
+            Web Developer <br />
+            Front-End Designer
+          </h3>
+          <button
+            onClick={() => (window.location.href = "/#projects")}
+            className="btn-main"
+          >
+            view my work
+          </button>
         </div>
         <div className="content-wrapper">
           <Computer />

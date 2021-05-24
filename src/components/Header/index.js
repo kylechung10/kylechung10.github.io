@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 import "./Header.scss";
 
 function Header() {
@@ -10,10 +10,14 @@ function Header() {
     ? (document.body.dataset.theme = "dark")
     : (document.body.dataset.theme = "default");
 
+  isMenuOpen
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = null);
+
   return (
     <header>
       <div id="menu-fixed">
-        <Link to="/">
+        <NavHashLink to="/#home">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1000 1000"
@@ -48,7 +52,7 @@ function Header() {
               />
             </g>
           </svg>
-        </Link>
+        </NavHashLink>
 
         <div
           className={isMenuOpen ? "menu-btn show" : "menu-btn"}
@@ -67,24 +71,24 @@ function Header() {
         <nav id="navigation" className={isMenuOpen ? "show" : undefined}>
           <ul>
             <li>
-              <Link to="/#home" className="nav-item">
+              <NavHashLink to="/#home" className="nav-item">
                 Home
-              </Link>
+              </NavHashLink>
             </li>
             <li>
-              <Link to="/#project" className="nav-item">
+              <NavHashLink to="/#projects" className="nav-item">
                 Projects
-              </Link>
+              </NavHashLink>
             </li>
             <li>
-              <Link to="/#about" className="nav-item">
+              <NavHashLink to="/#about" className="nav-item">
                 About Me
-              </Link>
+              </NavHashLink>
             </li>
             <li>
-              <Link to="/#contact" className="nav-item">
+              <NavHashLink to="/#contact" className="nav-item">
                 Contact
-              </Link>
+              </NavHashLink>
             </li>
             <li id="theme-switch">
               <label
