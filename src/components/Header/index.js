@@ -67,7 +67,7 @@ function Header() {
         <nav id="navigation" className={isMenuOpen ? "show" : undefined}>
           <ul>
             <li>
-              <Link to="/" className="nav-item">
+              <Link to="/#home" className="nav-item">
                 Home
               </Link>
             </li>

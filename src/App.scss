@@ -7,8 +7,71 @@
 }
 html,
 body {
+  position: relative;
+  overflow-x: hidden;
   font-family: proxima-nova, sans-serif;
-  height: 100%;
   background-color: var(--bg-color);
+  color: var(--text-color);
   @include easeOut();
+}
+
+/*Page Styling*/
+section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-text {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-45%);
+  color: var(--bg-text);
+  line-height: 19rem;
+  font-size: 25rem;
+  text-shadow: var(--bg-text-shadow);
+  @include rig-bold();
+}
+
+.page-container,
+.content-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  &-wrapper {
+    flex-direction: column;
+  }
+  &-text {
+    h1 {
+      font-size: 7rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 3rem;
+      font-weight: 300;
+    }
+    button {
+      width: 300px;
+      height: 50px;
+      border-radius: 50px;
+      border: none;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      background-color: var(--btn-color);
+      color: #f2f2f2;
+      cursor: pointer;
+      transition: 0.1s all linear;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
 }

@@ -9,14 +9,22 @@
 :root,
 [data-theme="default"] {
   --bg-color: #f2f2f2;
-  --menu-btn: #171717;
+  --bg-text: #e9e9e9;
+  --bg-text-shadow: 2px 2px 2px #d8d8d8;
+  --computer-screen: #fff;
+  --text-color: #171717;
+  --btn-color: #1473e6;
   --nav-text-color: #f2f2f2;
   --navBG-color: #2d2d2d;
 }
 // Dark Mode
 [data-theme="dark"] {
   --bg-color: #171717;
-  --menu-btn: #f2f2f2;
+  --bg-text: #242424;
+  --bg-text-shadow: none;
+  --computer-screen: #000c1d;
+  --text-color: #f2f2f2;
+  --btn-color: #0f58b3;
   --nav-text-color: #f2f2f2;
   --navBG-color: #2d2d2d;
 }

@@ -11,7 +11,10 @@ header {
   z-index: 1000;
 
   svg {
-    @include easeOut();
+    transition: all 0.1s linear;
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -21,7 +24,7 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px 0 40px;
+  padding: 0 40px;
 }
 
 /*Menu Button*/
@@ -38,7 +41,7 @@ header {
     margin: 0;
     padding: 0;
     margin-right: 10px;
-    color: var(--menu-btn);
+    color: var(--text-color);
     @include easeOut();
   }
   &:hover {
@@ -50,7 +53,7 @@ header {
       width: 30px;
       height: 2px;
       margin: 0 0 6px 0;
-      background: var(--menu-btn);
+      background: var(--text-color);
       @include easeOut();
       &:nth-child(3) {
         margin-bottom: 0;
