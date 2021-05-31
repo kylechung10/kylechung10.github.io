@@ -13,10 +13,8 @@ function HeroSection() {
       <div className="content">
         <div className="content-wrapper">
           <h1>Kyle Chung</h1>
-          <h3>
-            Web Developer <br />
-            Front-End Designer
-          </h3>
+          <h3>Web Developer</h3>
+          <h3>Front-End Designer</h3>
           <button
             onClick={() => (window.location.href = "/#projects")}
             className="btn-main"

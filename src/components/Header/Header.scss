@@ -9,6 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 1000;
+  background: none;
 
   svg {
     transition: all 0.1s linear;
@@ -217,6 +218,9 @@ header {
 
 /*Mobile Menu*/
 @media screen and (max-width: 980px) {
+  header {
+    background: var(--header-color);
+  }
   #navigation {
     width: 100%;
   }

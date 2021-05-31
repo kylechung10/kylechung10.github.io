@@ -1,0 +1,25 @@
+#about {
+  h4 {
+    width: 75%;
+    letter-spacing: 1px;
+    line-height: 3rem;
+  }
+
+  .profile-picture {
+    align-items: center;
+  }
+
+  // Image
+  #portrait {
+    max-width: 750px;
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .profile-picture {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

@@ -51,10 +51,10 @@ function Projects() {
     },
     {
       title: "Movie Finder",
-      description: "an application for searching movies",
-      bgColor: "blue",
+      description: "application for searching movies",
+      bgColor: "#012340",
       textColor: "#fff",
-      thumbnail: "/img/gwf-thumbnail.jpg",
+      thumbnail: "/img/movie-app-thumbnail.jpg",
       icons: [
         {
           svg: <SiIcons.SiMongodb />,
@@ -78,21 +78,39 @@ function Projects() {
         },
       ],
     },
+    {
+      title: "Humanti",
+      description: "website for the fight against plastic pollution",
+      bgColor: "#a3e85c",
+      textColor: "#002100",
+      thumbnail: "/img/humanti-thumbnail.jpg",
+      icons: [
+        {
+          svg: <SiIcons.SiHtml5 />,
+          name: "HTML",
+        },
+        {
+          svg: <SiIcons.SiJavascript />,
+          name: "JavaScript",
+        },
+        {
+          svg: <SiIcons.SiCss3 />,
+          name: "CSS",
+        },
+      ],
+    },
   ];
 
   // JSX for project info text and icons
   const projectInfo = (project) => {
     return (
-      <div
-        className="project-info"
-        style={{ backgroundColor: project.bgColor, color: project.textColor }}
-      >
+      <div className="project-info">
         <div className="project-info-header">
           <h2>{project.title}</h2>
           <h4>{project.description}</h4>
         </div>
         <div className="project-info-created">
-          <h4 className="created-title">Created with</h4>
+          <h4 className="created-title">Built with</h4>
           <div className="icon-container">
             {project.icons.map((icon, index) => {
               return (
@@ -113,8 +131,16 @@ function Projects() {
     <section id="projects">
       <div className="content projects">
         <h1 className="project-header">My Projects</h1>
+        <h3 className="sub-title">Featured works</h3>
         {projectArray.map((project, index) => (
-          <div className="project-container" key={index}>
+          <div
+            className="project-container"
+            key={index}
+            style={{
+              backgroundColor: project.bgColor,
+              color: project.textColor,
+            }}
+          >
             {index % 2 === 0 ? (
               <>
                 {projectInfo(project)}

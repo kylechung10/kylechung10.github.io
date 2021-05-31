@@ -1,18 +1,5 @@
 @import "../assets";
 
-.bg-text {
-  cursor: default;
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  transform: translateY(-45%);
-  color: var(--bg-text);
-  line-height: 19rem;
-  font-size: 25rem;
-  text-shadow: var(--bg-text-shadow);
-  @include rig-bold();
-}
-
 /*Computer*/
 $frame: #707070;
 #computer {

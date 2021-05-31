@@ -71,22 +71,38 @@ function Header() {
         <nav id="navigation" className={isMenuOpen ? "show" : undefined}>
           <ul>
             <li>
-              <NavHashLink to="/#home" className="nav-item">
+              <NavHashLink
+                to="/#home"
+                className="nav-item"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
                 Home
               </NavHashLink>
             </li>
             <li>
-              <NavHashLink to="/#projects" className="nav-item">
+              <NavHashLink
+                to="/#projects"
+                className="nav-item"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
                 Projects
               </NavHashLink>
             </li>
             <li>
-              <NavHashLink to="/#about" className="nav-item">
+              <NavHashLink
+                to="/#about"
+                className="nav-item"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
                 About Me
               </NavHashLink>
             </li>
             <li>
-              <NavHashLink to="/#contact" className="nav-item">
+              <NavHashLink
+                to="/#contact"
+                className="nav-item"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
                 Contact
               </NavHashLink>
             </li>
@@ -103,6 +119,7 @@ function Header() {
                   type="checkbox"
                   id="checkbox"
                   onChange={() => setIsThemeDark(!isThemeDark)}
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
                 />
                 <span className="slider round" />
               </label>

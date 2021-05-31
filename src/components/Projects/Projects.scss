@@ -1,10 +1,13 @@
 .content.projects {
   flex-direction: column;
+
+  .sub-title {
+    margin-bottom: 50px;
+  }
 }
 .project {
   &-header {
     width: 100%;
-    margin-bottom: 50px;
   }
 
   &-container {
@@ -13,34 +16,42 @@
     flex-direction: row;
     width: 100%;
     margin-bottom: 50px;
-    cursor: pointer;
-
+    &:nth-child(odd)::after {
+      left: 50%;
+      right: 0;
+    }
+    &:nth-child(even)::after {
+      left: 0;
+      right: 50%;
+    }
     &::after {
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
-      content: "";
-      top: 0;
-      left: 0;
+      cursor: pointer;
+      content: "view project details →";
+      top: 90%;
       bottom: 0;
-      right: 0;
-      transition: background 0.2s ease;
+      transition: 0.2s ease-in-out;
       font-size: 2rem;
+      font-weight: 100;
       color: #f2f2f2;
-      background-color: transparent;
+      background-color: rgba(0, 0, 0, 0.8);
     }
     &:hover::after {
-      content: "view project details →";
-      background-color: rgba(0, 0, 0, 0.8);
+      top: 0;
     }
 
     img {
+      cursor: pointer;
       width: 50%;
     }
   }
+
   &-info {
     width: 50%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,6 +85,45 @@
           font-weight: 300;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .projects {
+    text-align: center;
+  }
+  .project-container {
+    flex-direction: column;
+
+    &::after {
+      top: 95%;
+    }
+
+    &:nth-child(even) {
+      flex-direction: column-reverse;
+    }
+    &:nth-child(even)::after,
+    &:nth-child(odd)::after {
+      left: 0;
+      right: 0;
+    }
+
+    .project-info {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .icon {
+    svg,
+    .express-icon {
+      font-size: 3rem;
+      height: 3rem;
     }
   }
 }

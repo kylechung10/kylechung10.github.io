@@ -1,0 +1,79 @@
+@import "../assets";
+
+.connect-header {
+  line-height: 6.5rem;
+  margin-bottom: 2rem;
+}
+
+.link-list {
+  list-style: none;
+  li {
+    margin-bottom: 2rem;
+    font-weight: 300;
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.1s linear;
+    &:hover {
+      opacity: 0.5;
+    }
+    span {
+      font-size: 3rem;
+    }
+    svg {
+      font-size: 3rem;
+      margin-right: 0.8rem;
+    }
+  }
+}
+
+.connect {
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    svg {
+      font-size: 7rem;
+    }
+
+    .animation-container {
+      margin: 0 1rem;
+    }
+  }
+
+  &-animation {
+    position: relative;
+    display: flex;
+
+    .bar {
+      position: relative;
+      border: 1px solid var(--text-color);
+      width: 30px;
+      height: 10px;
+      margin: 20px 10px;
+      animation: loadingAnimation 1.5s linear infinite;
+      animation-delay: calc(0.1s * var(--z));
+    }
+
+    &:last-child .bar {
+      animation-delay: calc(-0.1s * var(--z));
+    }
+  }
+
+  @keyframes loadingAnimation {
+    0% {
+      background: transparent;
+    }
+    10% {
+      background: var(--text-color);
+    }
+    50%,
+    100% {
+      background: transparent;
+    }
+  }
+}
