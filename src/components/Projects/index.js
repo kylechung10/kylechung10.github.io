@@ -26,6 +26,8 @@ function Projects() {
       bgColor: "#038c0c",
       textColor: "#fff",
       thumbnail: "/img/gwf-thumbnail.jpg",
+      liveSite: "https://www.golfwithfriends.app/",
+      gitRepo: "https://github.com/kylechung10/golf-score-app",
       icons: [
         {
           svg: <SiIcons.SiMongodb />,
@@ -51,10 +53,12 @@ function Projects() {
     },
     {
       title: "Movie Finder",
-      description: "application for searching movies",
+      description: "searching and saving favorite movies",
       bgColor: "#012340",
       textColor: "#fff",
       thumbnail: "/img/movie-app-thumbnail.jpg",
+      liveSite: "https://ucf-movie-finder.herokuapp.com/",
+      gitRepo: "https://github.com/kylechung10/ucf-movie-app/tree/deploy",
       icons: [
         {
           svg: <SiIcons.SiMongodb />,
@@ -84,6 +88,8 @@ function Projects() {
       bgColor: "#a3e85c",
       textColor: "#002100",
       thumbnail: "/img/humanti-thumbnail.jpg",
+      liveSite: "https://kylechung.com/ucf-humanti/",
+      gitRepo: "https://github.com/kylechung10/ucf-humanti",
       icons: [
         {
           svg: <SiIcons.SiHtml5 />,
@@ -104,23 +110,45 @@ function Projects() {
   // JSX for project info text and icons
   const projectInfo = (project) => {
     return (
-      <div className="project-info">
-        <div className="project-info-header">
-          <h2>{project.title}</h2>
-          <h4>{project.description}</h4>
-        </div>
-        <div className="project-info-created">
-          <h4 className="created-title">Built with</h4>
-          <div className="icon-container">
-            {project.icons.map((icon, index) => {
-              return (
-                <div className="icon" key={index}>
-                  {icon.svg}
-                  <span className="icon-name">{icon.name}</span>
-                </div>
-              );
-            })}
+      <div className="project-card">
+        <div className="project-info">
+          <div className="project-info-header">
+            <h2>{project.title}</h2>
+            <h4>{project.description}</h4>
           </div>
+          <div className="project-info-created">
+            <h4 className="created-title">Built with</h4>
+            <div className="icon-container">
+              {project.icons.map((icon, index) => {
+                return (
+                  <div className="icon" key={index}>
+                    {icon.svg}
+                    <span className="icon-name">{icon.name}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="project-link-container">
+          <p>view</p>
+          <a
+            href={project.liveSite}
+            target="_blank"
+            rel="noreferrer"
+            className="pro-link site"
+          >
+            live site
+          </a>
+          <p>or</p>
+          <a
+            href={project.gitRepo}
+            target="_blank"
+            rel="noreferrer"
+            className="pro-link github"
+          >
+            GitHub repository
+          </a>
         </div>
       </div>
     );

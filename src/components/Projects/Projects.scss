@@ -16,46 +16,26 @@
     flex-direction: row;
     width: 100%;
     margin-bottom: 50px;
-    &:nth-child(odd)::after {
-      left: 50%;
-      right: 0;
-    }
-    &:nth-child(even)::after {
-      left: 0;
-      right: 50%;
-    }
-    &::after {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      content: "view project details →";
-      top: 90%;
-      bottom: 0;
-      transition: 0.2s ease-in-out;
-      font-size: 2rem;
-      font-weight: 100;
-      color: #f2f2f2;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-    &:hover::after {
-      top: 0;
-    }
 
     img {
-      cursor: pointer;
       width: 50%;
     }
   }
 
-  &-info {
+  &-card {
     width: 50%;
-    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-info {
+    width: 100%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     text-align: center;
 
     &-header {
@@ -87,6 +67,28 @@
       }
     }
   }
+
+  &-link-container {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.7);
+
+    p {
+      font-size: 1.7rem;
+      font-weight: 100;
+      color: #171717;
+      margin: 0 5px;
+    }
+    a {
+      font-size: 1.7rem;
+      color: #171717;
+      font-weight: 500;
+      padding: 0 5px;
+    }
+  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -94,23 +96,18 @@
     text-align: center;
   }
   .project-container {
-    flex-direction: column;
-
-    &::after {
-      top: 95%;
-    }
-
     &:nth-child(even) {
       flex-direction: column-reverse;
     }
-    &:nth-child(even)::after,
-    &:nth-child(odd)::after {
-      left: 0;
-      right: 0;
-    }
-
-    .project-info {
+    flex-direction: column;
+    .project-card {
       width: 100%;
+    }
+    .project-info > * {
+      margin: 2rem 0;
+    }
+    .project-link-container {
+      padding: 1rem 0;
     }
     img {
       width: 100%;
