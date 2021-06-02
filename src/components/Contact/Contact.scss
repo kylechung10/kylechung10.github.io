@@ -11,6 +11,10 @@
     margin-bottom: 2rem;
     font-weight: 300;
   }
+  #email-item {
+    display: inline-flex;
+    align-items: center;
+  }
   a {
     display: inline-flex;
     align-items: center;
@@ -20,13 +24,13 @@
     &:hover {
       opacity: 0.5;
     }
-    span {
-      font-size: 3rem;
-    }
-    svg {
-      font-size: 3rem;
-      margin-right: 0.8rem;
-    }
+  }
+  span {
+    font-size: 3rem;
+  }
+  svg {
+    font-size: 3rem;
+    margin-right: 0.8rem;
   }
 }
 
@@ -75,5 +79,18 @@
     100% {
       background: transparent;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .link-list {
+    span,
+    svg {
+      font-size: 2rem;
+    }
+  }
+  .connect-animation .bar {
+    width: 10px;
+    margin: 10px 5px;
   }
 }

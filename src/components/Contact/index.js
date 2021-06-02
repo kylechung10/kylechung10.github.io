@@ -6,11 +6,6 @@ import "./Contact.scss";
 function Contact() {
   const linkArray = [
     {
-      icon: <AiIcons.AiOutlineMail />,
-      text: "kylechung7@gmail.com",
-      link: "",
-    },
-    {
       icon: <AiIcons.AiFillLinkedin />,
       text: "LinkedIn",
       link: "https://www.linkedin.com/in/kyle-chung-43a017180/",
@@ -29,7 +24,7 @@ function Contact() {
 
   const connectBars = [];
   for (let i = 0; i < 8; i++) {
-    connectBars.push(<div className="bar" style={{ "--z": i }}></div>);
+    connectBars.push(<div className="bar" style={{ "--z": i }} key={i}></div>);
   }
 
   return (
@@ -42,6 +37,10 @@ function Contact() {
             With Me
           </h1>
           <ul className="link-list">
+            <li id="email-item">
+              <AiIcons.AiOutlineMail />
+              <span>kylechung7@gmail.com</span>
+            </li>
             {linkArray.map((item, index) => (
               <li key={index}>
                 <a href={item.link} target="_blank" rel="noreferrer">
