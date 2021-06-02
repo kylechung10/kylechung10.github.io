@@ -83,3 +83,12 @@ $frame: #707070;
     border-radius: 5px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  #computer {
+    margin-top: 20px;
+    .screen {
+      height: 300px;
+    }
+  }
+}

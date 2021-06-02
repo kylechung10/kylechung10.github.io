@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavHashLink } from "react-router-hash-link";
 import "./Header.scss";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isThemeDark, setIsThemeDark] = useState(false);
+
+  // Check if dark mode on the device is active
+  useEffect(() => {
+    const checkMode = () => {
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        setIsThemeDark(true);
+      }
+    };
+    checkMode();
+  }, []);
 
   isThemeDark
     ? (document.body.dataset.theme = "dark")
@@ -118,6 +131,7 @@ function Header() {
                 <input
                   type="checkbox"
                   id="checkbox"
+                  checked={isThemeDark}
                   onChange={() => setIsThemeDark(!isThemeDark)}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 />
