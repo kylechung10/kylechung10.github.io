@@ -87,6 +87,10 @@
       color: #171717;
       font-weight: 500;
       padding: 0 5px;
+      transition: 0.1s all linear;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 }

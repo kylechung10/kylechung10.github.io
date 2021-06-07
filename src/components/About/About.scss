@@ -1,3 +1,5 @@
+@import "../assets";
+
 #about {
   h4 {
     width: 75%;
@@ -5,21 +7,57 @@
     line-height: 3rem;
   }
 
-  .profile-picture {
+  .profile-container {
     align-items: center;
-  }
 
-  // Image
-  #portrait {
-    max-width: 750px;
-    width: 100%;
-    border-radius: 50%;
+    // Image
+    #portrait {
+      max-width: 750px;
+      width: 70%;
+      border-radius: 50%;
+    }
+
+    // Icons
+    .icon-row {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .icon {
+      text-align: center;
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          transition: (0.1s * $i) transform ease-in-out;
+        }
+      }
+      transform: translateY(0);
+      &.hide {
+        transform: translateY(100%);
+      }
+      svg {
+        fill: var(--text-color);
+        font-size: 3rem;
+        height: 3rem;
+      }
+      span {
+        display: block;
+        font-weight: 100;
+        color: var(--text-color);
+      }
+    }
   }
 }
 
 @media screen and (max-width: 1400px) {
-  .profile-picture {
+  .profile-container {
     width: 70%;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile-container {
+    width: 100%;
   }
 }

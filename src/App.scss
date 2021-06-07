@@ -90,6 +90,11 @@ h4 {
   &:hover {
     opacity: 0.8;
   }
+  &:disabled,
+  &[disabled] {
+    opacity: 0.25;
+    cursor: default;
+  }
 }
 
 @media screen and (max-width: 1400px) {
