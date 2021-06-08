@@ -55,7 +55,6 @@
 
     .bar {
       position: relative;
-      border: 1px solid var(--text-color);
       width: 30px;
       height: 10px;
       margin: 20px 10px;
@@ -70,14 +69,14 @@
 
   @keyframes loadingAnimation {
     0% {
-      background: transparent;
+      background-color: transparent;
     }
     10% {
-      background: var(--text-color);
+      background-color: #4480a6;
     }
     50%,
     100% {
-      background: transparent;
+      background-color: transparent;
     }
   }
 }
