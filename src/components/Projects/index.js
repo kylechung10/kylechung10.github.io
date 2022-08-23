@@ -26,7 +26,7 @@ function Projects() {
       bgColor: "#038c0c",
       textColor: "#fff",
       thumbnail: "/img/gwf-thumbnail.jpg",
-      liveSite: "https://www.golfwithfriends.app/",
+      liveSite: "https://golf-with-friends.herokuapp.com/",
       gitRepo: "https://github.com/kylechung10/golf-score-app",
       icons: [
         {

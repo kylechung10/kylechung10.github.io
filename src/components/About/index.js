@@ -24,8 +24,9 @@ function About() {
         <div className="content-wrapper">
           <h1>About Me</h1>
           <h4>
-            I am a UCF graduate with a bachelor's degree in Web Design. I focus
-            on developing a functional experience for web applications.
+            I am an Orlando based front-end web developer. I graduated UCF with
+            a bachelor's degree in Web Design, and I specialize on developing a
+            functional front-end experience for websites.
           </h4>
           <button
             className="btn-main"
@@ -77,12 +78,8 @@ function About() {
               <span>Express.js</span>
             </div>
             <div className={isSkillsOpen ? "icon" : "icon hide"}>
-              <SiIcons.SiMicrosoftoffice />
-              <span>
-                Microsoft
-                <br />
-                Office
-              </span>
+              <SiIcons.SiPhp />
+              <span>PHP</span>
             </div>
             <div className={isSkillsOpen ? "icon" : "icon hide"}>
               <SiIcons.SiAdobecreativecloud />

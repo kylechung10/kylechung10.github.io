@@ -15,11 +15,6 @@ function Contact() {
       text: "GitHub",
       link: "https://github.com/kylechung10",
     },
-    {
-      icon: <AiIcons.AiOutlineInstagram />,
-      text: "Instagram",
-      link: "https://www.instagram.com/kylechungphotography/?hl=en",
-    },
   ];
 
   const connectBars = [];
@@ -38,8 +33,10 @@ function Contact() {
           </h1>
           <ul className="link-list">
             <li id="email-item">
-              <AiIcons.AiOutlineMail />
-              <span>kylechung7@gmail.com</span>
+              <a href="mailto: kylechung7+portfolio@gmail.com">
+                <AiIcons.AiOutlineMail />
+                <span>kylechung7@gmail.com</span>
+              </a>
             </li>
             {linkArray.map((item, index) => (
               <li key={index}>
