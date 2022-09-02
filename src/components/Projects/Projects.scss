@@ -5,6 +5,11 @@
     margin-bottom: 50px;
   }
 }
+.personal-projects-link {
+  color: var(--text-color);
+  width: fit-content;
+  font-size: 1.25rem;
+}
 .project {
   &-header {
     width: 100%;

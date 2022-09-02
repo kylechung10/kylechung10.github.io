@@ -188,6 +188,13 @@ function Projects() {
             )}
           </div>
         ))}
+        <h3>Additional Personal Projects</h3>
+        <a
+          className="personal-projects-link"
+          href="https://kylechung-personal-projects.netlify.app/"
+        >
+          View more
+        </a>
       </div>
     </section>
   );
